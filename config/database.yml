@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode  
+  pool: 5
+  username: postgres
+  password: password
+  host: localhost
+
+development:
+  <<: *default
+  database: aegis_metrology_development
+
+test:
+  <<: *default
+  database: aegis_metrology_test
+
+production:
+  <<: *default
+  database: aegis_metrology_production  
