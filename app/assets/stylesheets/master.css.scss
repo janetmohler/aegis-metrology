@@ -7,30 +7,40 @@
  ** Navigation **
  ***************/
 
-.navbar-default {
-  background-color: rgba(255, 255, 255, 0); 
-}
-
+// Main navigation bar
 .navbar {
-  border: none;  
+  border-radius: 0px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);   
 }
 
-.navbar-nav {
-  font-size: 20px;  
-  margin: 15px;  
+// Container for logo and toggle menu icon
+.navbar-header {
+  margin-top: 30px;
+  height: 70px;   
 }
-
-/***********
- ** Brand **
- **********/
 
 .navbar-brand {
-  height: 120px;  
-} 
-
-.navbar-brand img {
-  height: 100px;  
+  height: 70px;
+  padding: 0px;  
 }
+
+// Company logo
+.navbar-brand img {
+  height: 70px;   
+}
+
+// Navigation links
+.navbar-nav {
+  margin: 15px;
+  font-size: 18px;     
+}
+
+
+
+
+
+
 
 
 
