@@ -1,6 +1,6 @@
 <%= simple_form_for @survey do |f| %>
 
-    <%= f.input :date %>
+    <%= f.input :date, input_html: { class: 'datepicker' } %>
 
     <%= f.input :first_name %>
 
