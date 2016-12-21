@@ -14,6 +14,7 @@ gem 'sprockets', '2.11.0'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'jquery-ui-rails'
+gem 'devise', '>= 3.2.4'
 
 
 
