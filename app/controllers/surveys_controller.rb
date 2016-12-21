@@ -1,11 +1,12 @@
 class SurveysController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @survey = Survey.new
   end
 
   def create 
-    @survey = Survey.create(survey_params)
+    current_user.surveys.create(survey_params)
     redirect_to root_path 
   end
 
