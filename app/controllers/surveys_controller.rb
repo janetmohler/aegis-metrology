@@ -4,15 +4,30 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
   end 
-
-  def edit
-    @survey = Survey.find(params[:id])
-  end
-
+  
   def create 
     current_user.surveys.create(survey_params)
     redirect_to user_path(current_user)
   end
+
+  def edit
+    @survey = Survey.find(params[:id])    
+  end
+
+  def update
+    @survey = Survey.find(params[:id])
+
+    @survey.update_attributes(survey_params)
+    redirect_to user_path(current_user)
+  end
+
+  def destroy
+    @survey = Survey.find(params[:id])   
+
+    @survey.destroy
+    redirect_to user_path(current_user)
+  end
+
 
   private
 
