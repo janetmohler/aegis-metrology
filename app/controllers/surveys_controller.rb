@@ -3,11 +3,15 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+  end 
+
+  def edit
+    @survey = Survey.find(params[:id])
   end
 
   def create 
     current_user.surveys.create(survey_params)
-    redirect_to root_path 
+    redirect_to user_path(current_user)
   end
 
   private
