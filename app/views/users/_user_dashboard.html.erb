@@ -1,0 +1,28 @@
+<div class="panel panel-primary dashboard">
+  <div class="panel-heading">
+    <h3 class="panel-title">Welcome, <%= @user.full_name %></h3>
+  </div>
+  <div class="panel-body">
+    <%= link_to "New Customer Satisfaction Survey", new_survey_path %> 
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Project</th>
+        <th>Edit</th>
+      </tr>
+      <% @user.surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.id %></td>
+        <td><%= survey.date %></td>
+        <td><%= survey.project %></td>
+        <td><%= link_to 'Edit', edit_survey_path(survey), class: 'btn btn-primary' %></td>
+      </tr>
+      <% end %> 
+    </table>
+  </div>
+</div>

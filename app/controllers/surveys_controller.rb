@@ -16,15 +16,12 @@ class SurveysController < ApplicationController
 
   def update
     @survey = Survey.find(params[:id])
-
     @survey.update_attributes(survey_params)
     redirect_to user_path(current_user)
   end
 
   def destroy
-    @survey = Survey.find(params[:id])   
-
-    @survey.destroy
+    @survey = Survey.find(params[:id]).destroy  
     redirect_to user_path(current_user)
   end
 

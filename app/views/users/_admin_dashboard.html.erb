@@ -1,0 +1,122 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-primary dashboard">
+    <div class="panel-heading">
+      <h3 class="panel-title">Welcome, <%= @user.full_name %></h3>
+    </div>
+  </div>
+  <!-- First accordion panel heading -->
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          View Aegis Representatives
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= link_to "New Aegis Representative", new_representative_path %>
+      </div>
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <% @representatives.each do |representative| %>
+          <tr>
+            <td><%= representative.id %></td>
+            <td><%= representative.created_at.strftime("%m/%d/%Y") %></td>
+            <td><%= representative.full_name %></td>            
+            <td><%= link_to 'Edit', edit_representative_path(representative), class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Delete', representative_path(representative), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %></td>
+          </tr>
+          <% end %>  
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Second accordion panel heading -->
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          View Surveys
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Project</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <% @surveys.each do |survey| %>
+          <tr>
+            <td><%= survey.id %></td>
+            <td><%= survey.date %></td>
+            <td><%= survey.full_name %></td>
+            <td><%= survey.company %></td>
+            <td><%= survey.project %></td>
+            <td><%= link_to 'Edit', edit_survey_path(survey), class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Delete', survey_path(survey), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %></td>
+          </tr>
+          <% end %>  
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Third accordion panel heading -->
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          View Users
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Name</th> 
+            <th>Email</th>                       
+            <th>Delete</th>
+          </tr>
+          <% @users.each do |user| %>          
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.created_at.strftime("%m/%d/%Y") %></td>
+            <td><%= user.full_name %></td>
+            <td><%= user.email %></td> 
+            <% if current_user == user %>                       
+              <td><%= link_to 'Delete', '#', class: 'btn btn-danger', disabled: 'disabled' %></td>
+            <% else %>
+              <td><%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %></td>
+            <% end %>
+          </tr>          
+          <% end %>  
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+        
+    
+
