@@ -47,11 +47,86 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 500px;   
+  height: 500px; 
+  position: relative;  
+}
+
+// Headline on hero image
+
+.intro {
+  width: 100%;
+  background:rgba(0,0,0, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+// Sections Heading
+
+.section-heading {
+  font-weight: bold;
+  margin-top: 75px;
+}
+
+// Certifications Section
+
+#certifications .btn {
+  margin-bottom: 15px;   
+}
+
+// Tools Section
+
+@media (max-width: 1200px) {
+  #tools {
+    display: none;
+  }
+}
+
+.img-size {
+  max-height: 180px;
+}
+
+.icon {
+  text-align: center;
+  max-height: 200px;
+  padding: 20px;
+
+}
+
+// Services Section
+
+#services {
+  background-color: #ccc;
+  margin-top: 10px;
+}
+
+#services ul {
+  padding: 0 20px;
+  width: 50%;
+  float: left;
+  list-style: none;
+}
+
+#services ul li {
+  font-size: 15px;
+  text-indent: -1em;
+  line-height: 1.8em;
+}
+
+#services ul li:before {
+  content: "• ";
+  color: #0bb6ee;
+  font-size: 22px;
+  position: relative;
+  top: 3px;
+}
+
+.clear {
+  clear: both;
 }
 
 /***************
- ****Survey****
+ ****Forms****
  ***************/
 
 .questions {
