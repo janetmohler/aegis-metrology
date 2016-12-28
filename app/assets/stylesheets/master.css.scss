@@ -4,6 +4,37 @@
 // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 /***************
+ *Sticky Footer*
+ ***************/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 150px;
+}
+
+// Footer on mobile devices
+  .footer {
+    position: absolute;
+    width: 100%;
+    color: white; 
+    font-weight: 100;
+    padding-top: 25px;
+    background-color: rgba(36,32,33,0.9);   
+}
+
+@media (min-width:768px) { 
+  .footer {
+    bottom: 0;    
+    height: 150px;    
+  }
+}
+
+/***************
  **Navigation**
  ***************/
 
@@ -37,6 +68,12 @@
   font-size: 18px;     
 }
 
+// Increase font size of create account button
+.navbar-nav .btn {
+  font-size: 18px;
+  border-radius: 0px;
+}
+
 /***************
  ***Homepage***
  ***************/
@@ -47,38 +84,46 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 500px; 
-  position: relative;  
+  height: 500px;   
 }
 
 // Headline on hero image
 
 .intro {
-  width: 100%;
-  background:rgba(0,0,0, 0.5);
+  width: 100%;  
   color: white;
-  position: absolute;
-  bottom: 0;
+  margin-top: 200px;
+}
+
+// About Section
+
+#about {
+  padding-bottom: 50px;
 }
 
 // Sections Heading
 
 .section-heading {
   font-weight: bold;
-  margin-top: 75px;
+  margin-top: 50px;
 }
 
 // Certifications Section
 
 #certifications .btn {
-  margin-bottom: 15px;   
+  margin-bottom: 15px;
+  border-radius: 0px;   
 }
 
 // Tools Section
 
-@media (max-width: 1200px) {
+#tools {
+  display: none;
+}
+
+@media (min-width: 1200px) {
   #tools {
-    display: none;
+    display: block;
   }
 }
 
@@ -96,8 +141,8 @@
 // Services Section
 
 #services {
-  background-color: #ccc;
-  margin-top: 10px;
+  background-color: #f5f5f5;
+  padding-bottom: 50px;
 }
 
 #services ul {
