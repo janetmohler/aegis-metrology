@@ -59,7 +59,7 @@ body {
 // Sign Up Button
 .navbar-nav .btn {
   font-size: 18px;
-  background-color: #0bb6ee;
+  background-color: #337ab7;
   border: none
 }
 
@@ -78,13 +78,13 @@ body {
 }
 
 // Headline on hero image
-.intro {   
+.headline {   
   padding: 3rem;
   margin-top: 15%; 
   color: #fff;
 }
 
-.intro h1 {
+.headline h1 {
   font-size: 60px;
   font-family: 'Old Standard TT', serif;
 }
@@ -133,7 +133,7 @@ body {
 
 #services ul li:before {
   content: "• ";
-  color: #0bb6ee;
+  color: #337ab7;
   font-size: 22px;
   position: relative;
   top: 3px;
@@ -195,7 +195,7 @@ body {
 #footer {
   height: $footer-height;
   color: white;
-  background-color: #0bb6ee;
+  background-color: #337ab7;
   padding:10px 0px;
 }
 
@@ -206,7 +206,7 @@ $footer-height-mobile: 200px;
 
 // Reduce font size of hero image text on extra-small devices
 @media (max-width: 750px) {
- .intro h1 {
+ .headline h1 {
     font-size: 45px;
   }
 }
