@@ -10,40 +10,40 @@
 
     <%= f.input :project %>
 
-    <br />
+    <br>
 
     <%= f.association :representatives, label: 'Aegis Representative', label_method: :full_name, as: :check_boxes %>
 
-    <br />
+    <br>
 
     <h4>Please rate your experience from 1 (no or needs improvement) to 5 (completely).</h4>
 
-    <br />
+    <br>
 
     <%= f.input :question_1, label: 'Was our representative(s) prompt, courteous, and professional?', label_html: { class: 'questions' }, as: :radio_buttons,
       item_label_class: "radio-inline", item_wrapper_tag: false, collection: Survey::RATINGS %>
 
-    <br />
+    <br>
 
     <%= f.input :question_2, label: 'Were you satisfied with the measurement services provided?',label_html: { class: 'questions' }, as: :radio_buttons,
       item_label_class: "radio-inline", item_wrapper_tag: false, collection: Survey::RATINGS %>
 
-    <br />
+    <br>
 
     <%= f.input :question_3, label: 'How well does the project/service meet your needs?', label_html: {class: 'questions' }, as: :radio_buttons,
       item_label_class: "radio-inline", item_wrapper_tag: false, collection: Survey::RATINGS %>
 
-    <br />
+    <br>
 
     <%= f.input :question_4, label: 'Overall, are you satisfied with what was delivered?', label_html: { class: 'questions' }, as: :radio_buttons,
       item_label_class: "radio-inline", item_wrapper_tag: false, collection: Survey::RATINGS %>
 
-    <br />
+    <br>
 
     <%= f.input :question_5, label: 'Would you feel comfortable recommending our services to industry peers?', label_html: { class: 'questions' }, as: :radio_buttons,
       item_label_class: "radio-inline", item_wrapper_tag: false, collection: Survey::RATINGS %>
 
-    <br />
+    <br>
 
     <%= f.input :comment %>
     
