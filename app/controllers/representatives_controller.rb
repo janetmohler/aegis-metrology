@@ -7,7 +7,7 @@ class RepresentativesController < ApplicationController
 
   def create 
     @representative = Representative.create(representative_params)
-    redirect_to root_path 
+    redirect_to user_path(current_user) 
   end
 
   def edit
@@ -16,7 +16,7 @@ class RepresentativesController < ApplicationController
 
   def update
     @representative = Representative.find(params[:id])
-    @representatie.update_attributes(representative_params)
+    @representative.update_attributes(representative_params)
     redirect_to user_path(current_user)
   end
 
